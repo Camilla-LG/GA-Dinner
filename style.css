@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(167, 244, 205);
+}
+
+
+#output{
+width: 100px;
+height: 40px;
+background-color: white;
+border: double 2px black;
+margin-bottom: 3%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: larger;
+font-weight: 900;
+}
