@@ -2,13 +2,23 @@ body{
     background-color: rgb(167, 244, 205);
 }
 
+#dinnerList {
+    display: none;
+    width: 20%;
+    padding: 5px 0;
+    text-align: center;
+    background-color: white;
+    margin-top: 20px;
+    border: 2px double black;
+}
 
-#output{
+#outputTip{
 width: 100px;
 height: 40px;
 background-color: white;
 border: double 2px black;
 margin-bottom: 3%;
+margin-top: 3%;
 display: flex;
 justify-content: center;
 align-items: center;

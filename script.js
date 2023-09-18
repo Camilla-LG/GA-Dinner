@@ -3,8 +3,6 @@ let dinnerSuggestion = "";
 let searchBar = "";
 let viewDinner = "";
 let groceryList = [];
-let viewGroceryList = "";
-let viewAllDinners ="";
 
 let dinnerHelp = document.getElementById("dinner");
 
@@ -19,7 +17,7 @@ function updateView(){
     <div class="savedDinners">
         <input autofocus type="text" id="enterDinner" placeholder="Enter Suggestion...">
         <button id="inputClick" onclick="addDinner()"> Add this Dish </button>
-        <div id="outputDinnerList"> ${dinnerContainer} </div>
+        <div id="outputDinnerList"> ${viewAllDinners}</div>
         <button id="clickDinnerList" onclick="showDinnerList()"> Show All Dinners </button>
     </div> 
     <br>
@@ -53,10 +51,16 @@ function dinnerTip(){
 }
 
 function showDinnerList(){
+    let viewAllDinners =``;
     for (let index = 0; index < dinnerContainer.length; index++){
-        viewAllDinners = dinnerContainer[index];
+        viewAllDinners += dinnerContainer;
+    viewAllDinners +=/*HTML*/`
+    <ul>
+        <li> ${viewAllDinners[index]} </li>
+    </ul>
+    `;
     }
-    updateView();
+    return viewAllDinners;
 }
 
 function addGrocery(){
@@ -65,9 +69,10 @@ function addGrocery(){
     document.getElementById('enterGrocery').value ="";
 }
 
-function showGroceryList(){
-    for (let index = 0; index < groceryList.length; index++){
-        viewGroceryList = groceryList[index];
-    }
-    updateView();
-}
+// function showGroceryList(){
+// let viewGroceryList = "";
+//     for (let index = 0; index < groceryList.length; index++){
+//         viewGroceryList = groceryList;
+//     }
+//     updateView();
+// }
