@@ -7,14 +7,21 @@ function updateView(){
     document.getElementById('dinner').innerHTML = /*HTML*/`
     
     <h1> DINNER TIME! </h1>
-    <h3> Help Wanted - Help Given </h3>
+    <h2> Help Wanted - Help Given </h2>
 
-    <input type="text" id="inputDinner" onchange="addDinner(this.value)">
-    <button onclick="showList()"> Vis Middagsliste </button>
-    <div id="dinnerList"> ${showDinners()} </div> 
-    <br>
-    <div id="outputTip"> ${randomDinner} </div>
-    <button onclick="dinnerTip()"> Middagsforslag </button>
+    <div class="dinnerContainer">
+        <div class="dinnerArea">
+            <input type="text" id="inputDinner" placeholder="Insert dinner here..." onchange="addDinner(this.value)">
+            <br>
+            <button onclick="showList()"> Vis Middagsliste </button>
+        </div>
+        <div class="mealplan">
+            <div id="dinnerList"> ${showDinners()} </div> 
+            <br>
+            <div id="outputTip"> ${randomDinner} </div>
+            <button onclick="dinnerTip()"> Middagsforslag </button>
+        </div>
+    </div>
     `
 }
 

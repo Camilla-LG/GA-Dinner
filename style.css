@@ -1,5 +1,56 @@
 body{
-    background-color: rgb(167, 244, 205);
+    height: 100%;
+    width: 100%;
+    background-image: url('images/food2.jpg');
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 70px;
+    color: rgb(69, 48, 22);
+    text-shadow: -1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000,
+                -1px -1px 0 #000;
+    border: double 10px;
+    border-color: black;
+    background-color: rgb(238, 216, 167);
+    padding: 10px;
+    margin-block: 10px;
+}
+
+h2{
+    font-size: 30px;
+    font-style: italic;
+    color: rgb(238, 216, 167);
+    text-shadow: -1px 1px 0 #000,
+    1px 1px 0 rgb(69, 48, 22),
+    1px -1px 0 rgb(69, 48, 22),
+    -1px -1px 0 rgb(69, 48, 22);
+    display: flex;
+    justify-content: center;
+}
+
+.dinnerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dinnerArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mealplan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #dinnerList {

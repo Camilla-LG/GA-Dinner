@@ -10,7 +10,7 @@ let dinnerHelp = document.getElementById("dinner");
 updateView();
 function updateView(){
     dinnerHelp.innerHTML= /*HTML*/`
-    
+    <div class="image">
     <h1> DINNER TIME! </h1>
     <h3> Help Wanted - Help Given </h3>
 
@@ -33,6 +33,7 @@ function updateView(){
         <div id="output"> ${viewDinner} </div>
         <button id="helpMe" onclick="dinnerTip()"> Help! </button>
         <button id="helpAllWeek" onclick="weeklyPlan()"> Give Me a 7 day Dinnerplan </button>
+    </div>
     </div>
     `;
 }
