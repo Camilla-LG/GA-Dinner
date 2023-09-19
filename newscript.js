@@ -39,9 +39,7 @@ function showDinners(){
     let dinnerHtml = ``;
     for(let i = 0; i < dinners.length; i++){
         dinnerHtml += /*HTML*/`
-        <ul>
             <li> ${dinners[i]} </li>
-        </ul>
         `
     }
     return dinnerHtml;
