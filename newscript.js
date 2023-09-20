@@ -1,4 +1,5 @@
-let dinners = [];
+const dinnerArray = [{dinnerObject: "pasta bolognese"}, {dinnerObject: "burger & fries"}, {dinnerObject: "pizza"}];
+let dinnerObject = {};
 let randomDinner = "";
 
 
@@ -37,23 +38,26 @@ function showList(){
 
 function showDinners(){
     let dinnerHtml = ``;
-    for(let i = 0; i < dinners.length; i++){
+    for(let i = 0; i < dinnerArray.length; i++){
         dinnerHtml += /*HTML*/`
-            <li> ${dinners[i]} </li>
+            <li class="dinnerAlternative" onclick="showGroceryList()"> ${dinnerArray[i].dinnerObject} </li>
         `
     }
     return dinnerHtml;
 }
 
-function addDinner(inputValue){
-    dinners.push(inputValue)
+function addDinner(dinnerObject){
+    dinnerArray.push({dinnerObject})
     updateView();
 }
 
 function dinnerTip(){
     document.getElementById('outputTip');
-    let randomIndex = Math.floor(Math.random() * dinners.length);
-    randomDinner = dinners[randomIndex];
+    let randomIndex = Math.floor(Math.random() * dinnerArray.length);
+    randomDinner = dinnerArray[randomIndex].dinnerObject;
     updateView();
 }
 
+function showGroceryList(){
+
+}

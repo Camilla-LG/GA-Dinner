@@ -61,7 +61,7 @@ h2{
 
 #dinnerList {
     display: none;
-    width: 80%;
+    width: 90%;
     padding-left: 15px;
     text-align: left;
     background-color: white;
@@ -69,8 +69,13 @@ h2{
     border: 2px double black;
 }
 
+li:hover{
+    font-weight: bold;
+}
+
+
 #outputTip{
-width: 100px;
+width: 150px;
 height: 40px;
 background-color: white;
 border: double 2px black;
