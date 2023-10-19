@@ -10,6 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 5%;
 }
 
 input{
@@ -53,6 +54,8 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20%;
+    
 }
 
 .dinnerArea{
@@ -77,6 +80,11 @@ h2{
     border: 2px double black;
 }
 
+#dinnerList div{
+    font-weight: bold;
+    padding: 7px;
+}
+
 #dinnerList li:hover{
     font-weight: bold;
 }
@@ -89,6 +97,13 @@ h2{
     background-color: rgb(255, 247, 210);
     margin-top: 20px;
     border: 2px double black;
+}
+
+#OutputGroceryList div{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding: 7px;
 }
 
 h3{

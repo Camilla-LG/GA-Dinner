@@ -30,7 +30,10 @@ function updateView(){
             <button onclick="showList()"> Vis Middagsliste </button>
         </div>
         <div class="mealplan">
-            <div id="dinnerList"> ${showDinners()} </div> 
+            <div id="dinnerList"> 
+                <div> Liste over middager </div>
+                ${showDinners()}
+            </div> 
             <br>
             <div id="OutputGroceryList" onclick="showGroceryList()"> 
                 <div> Handleliste </div>
