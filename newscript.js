@@ -1,6 +1,19 @@
-const dinnerArray = [{dinnerObject: "pasta bolognese"}, {dinnerObject: "burger & fries"}, {dinnerObject: "pizza"}];
+const dinnerArray = [
+    {
+        dinnerObject: "pasta bolognese",
+        groceries: ["pasta", "sauce"],
+    },
+    {
+        dinnerObject: "burger & fries",
+        groceries: ["burger", "fries"], 
+    },
+    {
+        dinnerObject: "pizza",
+        groceries: ["dough", "toppings"],
+    }];
 let dinnerObject = {};
 let randomDinner = "";
+let groceryList = [];
 
 
 updateView();
@@ -19,6 +32,11 @@ function updateView(){
         <div class="mealplan">
             <div id="dinnerList"> ${showDinners()} </div> 
             <br>
+            <div id="OutputGroceryList" onclick="showGroceryList()"> 
+                <div> Handleliste </div>
+                ${groceryList.length > 0 ? showGroceries() : ''} 
+            </div>
+            <br>
             <div id="outputTip"> ${randomDinner} </div>
             <button onclick="dinnerTip()"> Middagsforslag </button>
         </div>
@@ -34,13 +52,23 @@ function showList(){
         list.style.display = "block";
     }
 }
-   
 
+function showGroceryList(){
+    let list = document.getElementById('OutputGroceryList');
+    if(list.style.display === "block"){
+        list.style.display = "none";
+    } else {
+        list.style.display = "block";
+    }
+}
+   
+//en liste med alle middagene, men ikke ingredienser
 function showDinners(){
     let dinnerHtml = ``;
+
     for(let i = 0; i < dinnerArray.length; i++){
         dinnerHtml += /*HTML*/`
-            <li class="dinnerAlternative" onclick="showGroceryList()"> ${dinnerArray[i].dinnerObject} </li>
+            <li class="dinnerAlternative" onclick="updateGroceryList(${i});showGroceryList()"> ${dinnerArray[i].dinnerObject} </li>
         `
     }
     return dinnerHtml;
@@ -58,6 +86,22 @@ function dinnerTip(){
     updateView();
 }
 
-function showGroceryList(){
+//vise ingrediensene til den valgte retten
+function updateGroceryList(dishIndex){
+    groceryList = [];
+    dinnerArray[dishIndex].groceries.forEach(ingredient => {
+        groceryList.push(/*HTML*/`
+        <li> ${ingredient} </li>`);
+    });
+    updateView();
+}
 
+function showGroceries(){
+    let html = "";
+    groceryList.forEach(item => {
+        html += /*HTML*/ `
+            ${item}
+        `
+    })
+    return html;
 }
